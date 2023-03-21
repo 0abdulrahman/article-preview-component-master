@@ -52,7 +52,6 @@ body {
           }
           .credits {
             @include flex-sb;
-            position: relative;
             .details {
               @include align-center;
               gap: 15px;
@@ -85,7 +84,7 @@ body {
               .popup {
                 position: absolute;
                 top: -90px;
-                left: 0;
+                left: 10px;
                 transform: translate(-50%, 5px);
                 background-color: $very_dark_grayish_blue;
                 @include center;
@@ -160,6 +159,8 @@ body {
             h1 {
               font-size: $font_size + 3;
             }
+            position: relative;
+            overflow: hidden;
             .credits {
               margin-top: 15px;
               transition: 0.3s;
@@ -171,18 +172,13 @@ body {
                 z-index: 2;
                 position: relative;
                 transition: 0.3s;
-                &.active {
-                  top: 10px;
-                }
               }
               .popup-mobile {
-                display: block;
                 position: absolute;
-                width: calc(100% + 70px);
+                width: 100%;
                 bottom: 0;
-                left: -35px;
-                padding: 22px 35px;
-                transform: translate(0, 20px);
+                left: 0;
+                padding: 32px 35px;
                 background-color: $very_dark_grayish_blue;
                 @include center;
                 justify-content: flex-start;
@@ -193,16 +189,16 @@ body {
                 letter-spacing: 5px;
                 border-radius: 0 0 10px 10px;
                 visibility: hidden;
-                opacity: 0;
                 transition: 0.3s;
                 cursor: auto;
+                transform: translateY(100%);
                 a {
                   @include center;
                 }
               }
               .popup-mobile.active {
                 visibility: visible;
-                opacity: 1;
+                transform: translateY(0);
               }
             }
           }
